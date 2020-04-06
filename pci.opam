@@ -1,9 +1,9 @@
 opam-version: "2.0"
 synopsis: "Ctypes bindings to libpci for OCaml"
-maintainer: "simon.beaumont@citrix.com"
+maintainer: "xen-api@lists.xen.org"
 authors: "Si Beaumont"
-homepage: "https://github.com/simonjbeaumont/ocaml-pci"
-bug-reports: "https://github.com/simonjbeaumont/ocaml-pci/issues"
+homepage: "https://github.com/xapi-project/ocaml-pci"
+bug-reports: "https://github.com/xapi-project/ocaml-pci/issues"
 depends: [
   "ocaml" {>= "4.02.3"}
   "ctypes" {>= "0.4.0"}
