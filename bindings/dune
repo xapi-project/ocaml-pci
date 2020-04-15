@@ -1,0 +1,5 @@
+(library
+  (name pci_bindings)
+  (public_name pci.bindings)
+  (libraries ctypes.stubs ctypes ctypes.foreign.threaded)
+)

@@ -1,7 +1,7 @@
 open Ctypes
 
-module B = Ffi_bindings.Bindings(Ffi_generated)
-module T = Ffi_bindings.Types(Ffi_generated_types)
+module B = Pci_bindings.Ffi_bindings.Bindings(Ffi_generated)
+module T = Pci_bindings.Ffi_bindings.Types(Ffi_generated_types)
 
 module U8 = Unsigned.UInt8
 module U16 = Unsigned.UInt16
@@ -86,7 +86,7 @@ let with_string ?(size=1024) f =
   let s = CArray.start buf in
   let r = f s size in
   (* Keep `s` alive through the C binding invocation in `f` *)
-  ignore (List.hd [s] |> Obj.repr |> Obj.tag);
+  ignore (Sys.opaque_identity (List.hd [s]));
   r
 
 let lookup_class_name pci_access class_id =
